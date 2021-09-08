@@ -1,26 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <title>卡片导航</title>
+    <style type="text/css">
+        .icon {
+           width: 50px; height: 50px;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="searchTab">
-        <input type="text">
-        <button>搜 索</button>
+        <form class="searchForm" method="get" action="https://cn.bing.com/search?" target="_blank">
+            <input name="q" type="text">
+            <button type="submit">搜 索</button>
+        </form>
     </header>
     <main class="cardTable">
         <ul class="cards">
             <li>
+                <a href="https://www.acfun.cn/" target="_blank">
+                    <div class="siteCard">
+                        <div class="siteLogo">A</div>
+                        <div class="siteLink">a.com</div>
+                    </div>
+                </a>
+            </li>
+            <li>
                 <div class="siteCard">
-                    <div class="siteLogo">A</div>
-                    <div class="siteLink">a.com</div>
+                    <div class="siteLogo">B</div>
+                    <div class="siteLink">b.com</div>
+                </div>
+            </li><li>
+                <div class="siteCard">
+                    <div class="siteLogo">B</div>
+                    <div class="siteLink">b.com</div>
+                </div>
+            </li><li>
+                <div class="siteCard">
+                    <div class="siteLogo">B</div>
+                    <div class="siteLink">b.com</div>
+                </div>
+            </li><li>
+                <div class="siteCard">
+                    <div class="siteLogo">B</div>
+                    <div class="siteLink">b.com</div>
                 </div>
             </li>
-        
             <li>
                 <div class="siteCard">
                     <div class="siteLogo">B</div>
@@ -46,7 +78,11 @@
                 </div>
             </li>
             <li class="siteAdd">
-                <div class="iconAdd"></div>
+                <div class="iconAdd">
+                    <svg class="icon">
+                        <use xlink:href="#icon-addcard"></use>
+                    </svg>
+                </div>
                 <div class="textAdd">添加卡片</div> 
             </li>
         </ul>
@@ -54,6 +90,8 @@
     <footer class="copyrightInfor">
         
     </footer>
+    <script src="https://at.alicdn.com/t/font_2799526_rj6h65sko5n.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

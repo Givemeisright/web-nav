@@ -10,11 +10,6 @@
     box-sizing: border-box;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
 /*搜索栏样式*/
 body {
     border: 1px solid red;
@@ -22,27 +17,16 @@ body {
 }
 
 .searchTab {
+
+    display: flex;
+    justify-content: space-between;
+
     margin-top: 40px;
     margin-left: 20px;
     margin-right: 20px;
 }
 
-.searchForm {
-    display: flex;
-
-    justify-content: space-between;
-}
-
-@media(min-width:500px) {
-    .searchForm {
-
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-.searchForm>input {
+.searchTab>input {
     width: 100%;
     margin-right: 20px;
     height: 40px;
@@ -51,36 +35,24 @@ body {
     border: 1px solid #ddd;
 }
 
-.searchForm>button {
+.searchTab>button {
     white-space: nowrap;
     padding: 0 25px;
     border: none;
     border-radius: 5px;
-    color: rgba(255, 255, 255, 0.925);
     background-color: rgb(96, 151, 223);
 }
 
 /*导航栏样式*/
-.cardTable {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
+.cardTable {}
 
 .cards {
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     border: 1px solid red;
     margin: 20px;
-    margin-right: 10px;
-}
-
-@media (min-width:500px) {
-    .cards {
-        margin-left: 0px;
-        margin-right: -10px;
-    }
 }
 
 .cards>li {
@@ -99,14 +71,6 @@ body {
     background-color: #fff;
     margin-bottom: 4px;
     padding: 5px;
-    margin-right: 5px;
-}
-
-@media(min-width:500px) {
-    .cards .siteCard {
-        margin-right: 20px;
-        margin-bottom: 20px;
-    }
 }
 
 .cards .siteCard>.siteLogo {
@@ -116,8 +80,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
-
+    font-size: 14px;
+    border: 1px solid red;
 }
 
 .cards .siteCard>.siteLink {
@@ -133,31 +97,22 @@ body {
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
-    background-color: #fff;
+
     margin-bottom: 4px;
     padding: 5px;
-    margin-right: 5px;
-}
-
-@media(min-width:500px) {
-    .cards .siteAdd {
-        margin-right: 20px;
-        margin-bottom: 20px;
-    }
 }
 
 .cards .siteAdd>.iconAdd {
-
+    border: 1px solid red;
     width: 64px;
     height: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
-
 }
 
 .cards .siteAdd>.textAdd {
     font-size: 14px;
     margin: 10px 0;
 }
+/*# sourceMappingURL=index.5952072d.css.map */
