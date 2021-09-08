@@ -1,0 +1,97 @@
+/*初始化*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*::before,*::after{box-sizing: border-box;}
+/*搜索栏样式*/
+body{
+    border:1px solid red;
+    background: #eee;
+}
+
+.searchTab{
+    
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.searchTab > input{
+    width: 100%;
+    margin-right: 20px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.searchTab > button{
+    white-space: nowrap;
+    padding: 0 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightblue;
+}
+/*导航栏样式*/
+.cardTable{
+    
+}
+
+.cards{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border:1px solid red;
+    margin: 20px;
+}
+
+.cards > li{
+    list-style-type: none;
+  
+}
+
+.cards .siteCard{
+    border:1px solid #ddd;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 4px;
+    padding: 5px;
+}
+
+.cards .siteCard > .siteLogo{
+   
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    
+}
+
+.cards .siteCard > .siteLink{
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.cards .siteAdd{
+    border:1px solid #ddd;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #fff;
+}
