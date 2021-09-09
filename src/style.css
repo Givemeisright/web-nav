@@ -17,7 +17,7 @@ a {
 
 /*搜索栏样式*/
 body {
-    border: 1px solid red;
+
     background: #eee;
 }
 
@@ -71,7 +71,7 @@ body {
 
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid red;
+
     margin: 20px;
     margin-right: 10px;
 }
@@ -100,12 +100,38 @@ body {
     margin-bottom: 4px;
     padding: 5px;
     margin-right: 5px;
+    cursor: default;
+    position: relative;
+}
+
+@media(min-width:500px) {
+    .cards .siteCard:hover {
+        background-color: #ddd;
+    }
 }
 
 @media(min-width:500px) {
     .cards .siteCard {
         margin-right: 20px;
         margin-bottom: 20px;
+    }
+
+    .cards .siteCard:hover>.close {
+        display: block;
+    }
+}
+
+.cards .siteCard>.close {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 3px;
+    cursor: pointer;
+}
+
+@media(max-width:500px) {
+    .cards .siteCard>.close {
+        display: block;
     }
 }
 
@@ -117,7 +143,7 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 50px;
-
+    text-transform: uppercase;
 }
 
 .cards .siteCard>.siteLink {
@@ -137,6 +163,11 @@ body {
     margin-bottom: 4px;
     padding: 5px;
     margin-right: 5px;
+    cursor: pointer;
+}
+
+.cards .siteAdd:hover {
+    background-color: #ddd;
 }
 
 @media(min-width:500px) {
