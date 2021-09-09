@@ -4,22 +4,40 @@ const hashMapStorage = localStorage.getItem('hashMapStorage');
 const objectHasMap = JSON.parse(hashMapStorage)
 //将string类型hasMap变成对象，对应const stringHashMap = JSON.stringify(hasMap)
 const hasMap = objectHasMap || [{
-    logo: 'c',
-    url: 'aa.com'
-}, {
-    logo: 'B',
-    url: 'bb.com'
-}, {
-    logo: 'C',
-    url: 'cc.com'
-}, {
-    logo: 'D',
-    url: 'dd.com'
-}]
+        logo: 'C',
+        url: 'https://caniuse.com/'
+    },
+    {
+        logo: 'D',
+        url: 'https://developer.mozilla.org/zh-CN/docs/Web'
+    },
+    {
+        logo: 'F',
+        url: 'https://www.figma.com/'
+    },
+    {
+        logo: 'G',
+        url: 'https://github.com/'
+    },
+    {
+        logo: 'I',
+        url: 'https://www.iconfont.cn/'
+    },
+
+    {
+        logo: 'R',
+        url: 'https://reactjs.org/'
+    },
+    {
+        logo: 'V',
+        url: 'https://cn.vuejs.org/'
+    }
+]
 const prune = (url) => {
     return url.replace('https://', '')
         .replace('http://', '')
         .replace('www.', '')
+        .replace('cn.', '')
         .replace(/\/.*/, '')
         .replace(/\..*/, '')
 }
