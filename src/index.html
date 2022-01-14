@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
     <title>卡片导航</title>
     <style type="text/css">
         .icon {
-           width: 1em; height: 1em;
-           vertical-align: -0.15em;
-           fill: currentColor;
-           overflow: hidden;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
         }
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="searchTab">
         <form class="searchForm" method="get" action="https://cn.bing.com/search?" autocomplete="off">
@@ -24,22 +28,78 @@
     </header>
     <main class="cardTable">
         <ul class="cards">
-            
+
             <li class="siteAdd">
                 <div class="iconAdd">
                     <svg class="icon">
                         <use xlink:href="#icon-addcard"></use>
                     </svg>
                 </div>
-                <div class="textAdd">添加卡片</div> 
+                <div class="textAdd">添加卡片</div>
             </li>
         </ul>
     </main>
     <footer class="copyrightInfor">
-        
+
     </footer>
-    <script src="//at.alicdn.com/t/font_2799526_78xpvxe23dy.js"></script>
+    <script src="//at.alicdn.com/t/font_2799526_588cs032i27.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="main.js"></script>
+    <script>
+        (function ($) {
+            $.fn.snow = function (options) {
+                var $flake = $('<div />')
+                    .css({
+                        'position': 'fixed', //'absolute',
+                        'top': '-50px',
+                        'z-index': '1000'
+                    })
+                    .html('&#10052;');
+                var documentHeight = document.documentElement.clientHeight; //$(document).height();
+                var documentWidth = $(document).width();
+                var defaults = {
+                    minSize: 10,
+                    maxSize: 20,
+                    newOn: 500,
+                    flakeColor: "#FFFFFF"
+                };
+                var options = $.extend({}, defaults, options);
+                var interval = setInterval(function () {
+                    var startPositionLeft = Math.random() * documentWidth - 100;
+                    var startOpacity = 0.5 + Math.random();
+                    var sizeFlake = options.minSize + Math.random() * options.maxSize;
+                    var endPositionTop = documentHeight - 40;
+                    var endPositionLeft = startPositionLeft - 100 + Math.random() * 200;
+                    var durationFall = documentHeight * 10 + Math.random() * 5000;
+                    $flake.clone()
+                        .appendTo('body')
+                        .css({
+                            left: startPositionLeft,
+                            opacity: startOpacity,
+                            'font-size': sizeFlake,
+                            color: options.flakeColor
+                        })
+                        .animate({
+                                top: endPositionTop,
+                                left: endPositionLeft,
+                                opacity: 0.2
+                            },
+                            durationFall,
+                            'linear',
+                            function () {
+                                $(this).remove();
+                            });
+                }, options.newOn);
+            };
+        })(jQuery);
+
+        $.fn.snow({
+            minSize: 10,
+            maxSize: 50,
+            newOn: 1000,
+            flakeColor: '#FFFFFF'
+        });
+    </script>
 </body>
+
 </html>
